@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="" class="scroll-smooth dark">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://kit.fontawesome.com/344d28dac7.js" crossorigin="anonymous"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Teko:wght@300..700&family=Outfit:wght@100..900&family=Anton&display=swap"
+    rel="stylesheet">
+  <title>Portfolio | Tobio</title>
+  <style>
+    .sharp {
+      border-radius: 0px 2px 200px 200px;
+      -webkit-border-radius: 0px 2px 200px 200px;
+      -moz-border-radius: 0px 2px 200px 200px;
+    }
+
+    .teko {
+      font-family: "Teko", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-weight: bold;
+    }
+
+    .lexend {
+      font-family: "Lexend", sans-serif;
+      font-optical-sizing: auto;
+      /* font-weight: 120; */
+      font-style: normal;
+    }
+
+    .outfit {
+      font-family: "Outfit", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+
+    .anton-regular {
+      font-family: "Anton", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .shadow-blue {
+      filter: drop-shadow(0 4px 10px rgba(25, 156, 177, 1));
+      /* Blue shadow */
+    }
+
+    /* DEMO-SPECIFIC STYLES */
+    .typewriter h1 {
+      color: #fff;
+      overflow: hidden;
+      /* Ensures the content is not revealed until the animation */
+      border-right: .15em solid #4175f0;
+      /* The typwriter cursor */
+      white-space: nowrap;
+      /* Keeps the content on a single line */
+      margin: 0 auto;
+      /* Gives that scrolling effect as the typing happens */
+      letter-spacing: .15em;
+      /* Adjust as needed */
+      animation:
+        typing 3.5s steps(30, end) 1,
+        blink-caret .5s step-end infinite;
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent
+      }
+
+      50% {
+        border-color: #4175f0
+      }
+    }
+
+    .text-focus-in {
+      -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+      animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
+
+    @-webkit-keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    .scale-up-center {
+      -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+      animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+
+    @-webkit-keyframes scale-up-center {
+      0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+      }
+
+      100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+
+    @keyframes scale-up-center {
+      0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+      }
+
+      100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+
+    .slide-right {
+      -webkit-animation: slide-right 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+      animation: slide-right 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+    }
+
+    .second-slide-right {
+      animation: slide-right 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+      -webkit-animation: slide-right 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+      animation-delay: 1s;
+    }
+
+    @-webkit-keyframes slide-right {
+      0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+      }
+
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slide-right {
+      0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+      }
+
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    .slide-left {
+      -webkit-animation: slide-left 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+      animation: slide-left 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+      animation-delay: 0.5s;
+    }
+
+    .second-slide-left {
+      -webkit-animation: slide-left 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+      animation: slide-left 0.5s cubic-bezier(0.600, -0.280, 0.735, 0.045) both;
+      animation-delay: 1.5s;
+    }
+
+    @-webkit-keyframes slide-left {
+      0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+      }
+
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slide-left {
+      0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+      }
+
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div id="app" class="bg-green-500 w-full m-0 "></div> -->
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+
+</html>
