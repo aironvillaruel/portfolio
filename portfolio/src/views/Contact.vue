@@ -1,9 +1,37 @@
 <script setup>
+import { reactive, ref } from "vue";
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
+
+function successEmail(message) {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    iconColor: "lightgreen",
+    customClass: {
+      popup: "colored-toast",
+    },
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
+
+  Toast.fire({
+    icon: "success",
+    title: message,
+  });
+}
+
+const form = reactive({
+  name: "",
+  email: "",
+  message: "",
+});
+
 const facebookIcon = () => {
   console.log("fb");
   window.location.href = "https://www.facebook.com/aironvillaruel03";
 };
-
 const instagramIcon = () => {
   window.location.href = "https://www.instagram.com/mr.tobioo/";
 };
@@ -12,6 +40,36 @@ const githubIcon = () => {
 };
 const linkedIcon = () => {
   window.location.href = "https://linkedin.com/in/airon-villaruel-aa7563247";
+};
+const sendEmail = () => {
+  console.log("Form Data:", form);
+
+  const templateParams = {
+    user_name: form.name,
+    user_email: form.email,
+    message: form.message,
+  };
+
+  emailjs
+    .send(
+      "service_0n6c7pq",
+      "template_t0by1zd",
+      templateParams,
+      "mdbqDVc1h-uThkSvL"
+    )
+    .then((response) => {
+      console.log("Success:", response.status, response.text);
+      successEmail("Your message has been sent successfully!");
+    })
+    .catch((error) => {
+      // statusMessage.value = "There was an error sending your message.";
+      console.error("Error:", error);
+    });
+
+  // Clear the form
+  form.name = "";
+  form.email = "";
+  form.message = "";
 };
 </script>
 
@@ -42,41 +100,49 @@ const linkedIcon = () => {
         class="md:hidden z-50 bg-gray-100 dark:bg-gradient-to-t from-slate-900 to-zinc-900 p-2 flex flex-col justify-between w-3/4 rounded-md shadow-md"
       >
         <div class="w-full p-4 flex flex-col gap-4">
-          <div class="w-full flex justify-center">
-            <h2 class="teko text-zinc-900 dark:text-white text-xl">
-              Get in Touch
-            </h2>
-          </div>
-
-          <div class="flex flex-col gap-4 items-center">
-            <input
-              type="text"
-              class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
-              placeholder="Name:"
-              name=""
-              id=""
-            />
-            <input
-              type="email"
-              class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
-              placeholder="Email:"
-              name=""
-              id=""
-            />
-            <textarea
-              name=""
-              class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
-              placeholder="Your Message..."
-              rows="5"
-            ></textarea>
-            <div id="btn-submit" class="flex">
-              <button
-                class="outfit text-zinc-900 dark:text-white text-md p-2 cursor-pointer bg-white dark:bg-zinc-900 w-full rounded-xl"
-              >
-                Submit
-              </button>
+          <form @submit.prevent="sendEmail">
+            <div></div>
+            <div class="w-full flex justify-center">
+              <h2 class="teko text-zinc-900 dark:text-white text-xl">
+                Get in Touch
+              </h2>
             </div>
-          </div>
+
+            <div class="flex flex-col gap-4 items-center">
+              <input
+                type="text"
+                class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
+                placeholder="Name:"
+                v-model="form.name"
+                id="name"
+                required
+              />
+              <input
+                type="email"
+                class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
+                placeholder="Email:"
+                v-model="form.email"
+                id="email"
+                required
+              />
+              <textarea
+                name=""
+                class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
+                placeholder="Your Message..."
+                rows="5"
+                v-model="form.message"
+                id="message"
+                required
+              ></textarea>
+              <div id="btn-submit" type="submit" class="flex">
+                <button
+                  class="outfit text-zinc-900 dark:text-white text-md p-2 cursor-pointer bg-white dark:bg-zinc-900 w-full rounded-xl"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
         <div
           class="p-2 flex flex-col justify-between gap-5 px-10 items-center w-full"
@@ -140,41 +206,49 @@ const linkedIcon = () => {
         class="hidden bg-gray-100 dark:bg-gradient-to-t from-slate-900 to-zinc-900 p-2 md:flex justify-between w-3/4 rounded-md shadow-md z-50"
       >
         <div class="w-1/2 p-4 flex flex-col gap-4">
-          <div>
-            <h2 class="teko text-zinc-900 dark:text-white text-xl">
-              Get in Touch
-            </h2>
-          </div>
-
-          <div class="flex flex-col gap-4">
-            <input
-              type="text"
-              class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
-              placeholder="Name:"
-              name=""
-              id=""
-            />
-            <input
-              type="email"
-              class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
-              placeholder="Email:"
-              name=""
-              id=""
-            />
-            <textarea
-              name=""
-              class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
-              placeholder="Your Message..."
-              rows="5"
-            ></textarea>
-            <div id="btn-submit">
-              <button
-                class="outfit text-zinc-900 dark:text-white text-md p-2 cursor-pointer bg-white dark:bg-zinc-900 w-full rounded-xl"
-              >
-                Submit
-              </button>
+          <form @submit.prevent="sendEmail">
+            <div>
+              <h2 class="teko text-zinc-900 dark:text-white text-xl">
+                Get in Touch
+              </h2>
             </div>
-          </div>
+
+            <div class="flex flex-col gap-4">
+              <input
+                type="text"
+                class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
+                placeholder="Name:"
+                v-model="form.name"
+                id="name"
+                required
+              />
+              <input
+                type="email"
+                class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
+                placeholder="Email:"
+                v-model="form.email"
+                id="email"
+                required
+              />
+              <textarea
+                name=""
+                class="outfit p-1 w-full border-b-2 border-gray-800 dark:border-gray-300 placeholder:text-zinc-900 dark:placeholder:text-white text-zinc-900 dark:text-white"
+                placeholder="Your Message..."
+                rows="5"
+                v-model="form.message"
+                id="message"
+                required
+              ></textarea>
+              <div id="btn-submit">
+                <button
+                  type="submit"
+                  class="outfit text-zinc-900 dark:text-white text-md p-2 cursor-pointer bg-white dark:bg-zinc-900 w-full rounded-xl"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
         <div class="w-1/2 p-2 flex flex-col justify-between gap-5 px-10">
           <label class="text-xl text-zinc-900 dark:text-white teko"
@@ -239,6 +313,11 @@ const linkedIcon = () => {
 </template>
 
 <style>
+.colored-toast.swal2-icon-success {
+  background-color: #1a1a1a !important;
+  border: 2px solid lightgreen;
+}
+
 #btn-submit {
   width: 114px;
   position: relative;

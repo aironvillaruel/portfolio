@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Test from '../views/Test.vue'
 import Skill from '../views/Skill.vue'
 import Project from '../views/Project.vue'
-import Contact from '@/views/Contact.vue'
+import Contact from '../views/Contact.vue'
 
 
 const router = createRouter({

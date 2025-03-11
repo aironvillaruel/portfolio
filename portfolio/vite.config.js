@@ -16,8 +16,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  server: {
-    host: '192.168.68.52', // This makes the server accessible to any device on the local network
-    port: 3000, // You can change the port if necessary
-  }
+  // server: {
+  //   host: '192.168.68.52', // This makes the server accessible to any device on the local network
+  //   port: 3000, // You can change the port if necessary
+  // }
 })
