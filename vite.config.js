@@ -6,7 +6,6 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:'/portfolio/',
   plugins: [
     vue(),
     // vueDevTools(),
@@ -14,11 +13,10 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  // server: {
-  //   host: '192.168.68.52', // This makes the server accessible to any device on the local network
-  //   port: 3000, // You can change the port if necessary
-  // }
+  server: {
+    historyApiFallback: true, // Ensure all routes redirect to index.html for Vue Router in development
+  },
 })
