@@ -3,17 +3,46 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://kit.fontawesome.com/344d28dac7.js" crossorigin="anonymous"></script>
-
+  <link rel="shortcut icon" href="/public/logo.png" type="image/x-icon">
   <link
     href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Teko:wght@300..700&family=Outfit:wght@100..900&family=Anton&display=swap"
     rel="stylesheet">
   <title>Portfolio | Tobio</title>
   <style>
+    .slide-top {
+      -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+
+    @-webkit-keyframes slide-top {
+      0% {
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+      }
+
+      100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slide-top {
+      0% {
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+      }
+
+      100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+    }
+
     .sharp {
       border-radius: 0px 2px 200px 200px;
       -webkit-border-radius: 0px 2px 200px 200px;

@@ -414,7 +414,7 @@ onBeforeUnmount(() => {
             >
               <h2 class="text-zinc-900 dark:text-white text-lg font-semibold teko">2023</h2>
               <div class="border-b border-gray-400 h-1 w-full"></div>
-              <label class="text-zinc-900 dark:text-whitee outfit font-semibold mt-2"
+              <label class="text-zinc-900 dark:text-white outfit font-semibold mt-2"
                 >System Developer</label
               >
               <p class="text-zinc-900 dark:text-white outfit text-sm text-justify">

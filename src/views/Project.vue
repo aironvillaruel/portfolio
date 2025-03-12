@@ -53,6 +53,7 @@ const rgmModal = () => {
   description.value = `Our website is powered by a user-friendly Content Management System (CMS), making it easy for you to explore our product catalog, request custom solutions, and access valuable resources. Whether you're looking for rubber-like materials for industrial, automotive, medical, or other applications, our team is committed to delivering innovative solutions with reliability and precision.`;
   modalRef.value.openModal(); // Calling openModal method through the reference
 };
+
 const aklatanModal = () => {
   project = "aklatan";
   console.log(project);
@@ -126,7 +127,7 @@ const videoSrc = () => {
         </h1>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 h-[90%] flex-1 w-[80%]">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 h-[90%] flex-1 w-[80%] slide-top">
         <div
           @click="ciebotModal"
           class="shadow-gradient rounded-3xl p-0.5 col-span-2 row-span-1 md:col-span-1 md:row-span-1 hover:scale-105 transition-all duration-300 cursor-pointer"
