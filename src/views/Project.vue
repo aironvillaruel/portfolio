@@ -4,6 +4,9 @@ import Modal from "../components/Modal.vue";
 
 // Create a reference to the Modal component
 const modalRef = ref(null);
+const modalGraphic = ref(null);
+const image = ref(null);
+
 let project = ref("");
 let title = ref("");
 let description = ref("");
@@ -61,6 +64,14 @@ const aklatanModal = () => {
   description.value = `E - Aklatan is an online library management system which is a modern, efficient, and user-friendly platform designed to streamline the management of library resources. The system offers a seamless experience for both students and faculty, providing easy access to a wide range of digital and physical resources.`;
   modalRef.value.openModal(); // Calling openModal method through the reference
 };
+
+const graphicModal = () => {
+  project = "graphic";
+  console.log(project);
+  title.value = "Graphic Design";
+  description.value = `As a skilled graphic designer proficient in both Photoshop and Canva, I specialize in creating visually captivating designs that communicate messages effectively. From stunning social media graphics to professional branding materials, I combine creativity and technical expertise to bring your vision to life. Whether it's crafting eye-catching logos, posters, or digital ads, I bring attention to detail and a unique artistic touch to every project.`;
+  modalGraphic.value.openModal(); // Calling openModal method through the reference
+};
 // Function to generate the video embed URL
 const videoSrc = () => {
   if (project == "noctogram") {
@@ -85,9 +96,8 @@ const videoSrc = () => {
         {{ title }}
       </h3>
       <iframe
-        class="hidden md:block"
-        width="560"
-        height="315"
+        class="hidden md:block w-full h-auto"
+        style="max-width: 100%; aspect-ratio: 16 / 9"
         :src="videoSrc()"
         title="YouTube video player"
         frameborder="0"
@@ -112,10 +122,27 @@ const videoSrc = () => {
         {{ description }}
       </p>
     </Modal>
+    <Modal ref="modalGraphic">
+      <h3
+        class="text-2xl font-semibold mb-4 text-zinc-900 dark:text-white teko"
+      >
+        {{ title }}
+      </h3>
+      <div class="flex justify-between">
+        <img src="/public/techno.jpeg" class="w-1/4 shadow-xl" alt="" />
+        <img src="/public/pancake.jpeg" class="w-1/4 shadow-xl" alt="" />
+        <img src="/public/bondee.jpeg" class="w-1/4 shadow-xl" alt="" />
+      </div>
+      <p
+        class="text-zinc-900 dark:text-white outfit text-md font-semibold text-justify"
+      >
+        {{ description }}
+      </p>
+    </Modal>
     <section
       class="bg-white dark:bg-zinc-900 p-4 flex justify-center flex-col items-center"
     >
-      <div class="flex justify-center w-full p-5 z-">
+      <div class="flex justify-center w-full p-5 ">
         <h1
           class="text-3xl text-zinc-900 dark:text-white font-bold anton-regular"
         >
@@ -127,7 +154,9 @@ const videoSrc = () => {
         </h1>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 h-[90%] flex-1 w-[80%] slide-top">
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-4 h-[90%] flex-1 w-[80%] slide-top"
+      >
         <div
           @click="ciebotModal"
           class="shadow-gradient rounded-3xl p-0.5 col-span-2 row-span-1 md:col-span-1 md:row-span-1 hover:scale-105 transition-all duration-300 cursor-pointer"
@@ -223,6 +252,7 @@ const videoSrc = () => {
         </div>
 
         <div
+          @click="graphicModal"
           class="shadow-gradient-three rounded-3xl p-0.5 col-span-2 row-span-1 md:col-span-1 md:row-span-1 hover:scale-105 transition-all duration-300 cursor-pointer"
         >
           <div

@@ -165,7 +165,7 @@ onBeforeUnmount(() => {
 
       <section
         id="about"
-        class="dark:bg-zinc-900 bg-white flex flex-row item-center justify-between z-10"
+        class="dark:bg-zinc-900 bg-white flex flex-row item-center justify-between"
       >
         <div class="w-full flex justify-center items-center">
           <div class="flex gap-5 p-2 w-3/4 ml-20 flex-col">
