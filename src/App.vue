@@ -42,8 +42,8 @@ const handleSubmit = async () => {
     return;
   }
 
-  isLoading.value = true;
-  errorMessage.value = "";
+  // isLoading.value = true;
+  // errorMessage.value = "";
 
   try {
     // Store the user message
@@ -220,7 +220,7 @@ const closeChat = () => {
     <div
       @click="chatMe"
       id="chatMe"
-      class="bg-gradient-to-br  from-blue-900 via-fuchsia-800 to-pink-800 text-white teko cursor-pointer fixed bottom-2 right-2 p-2 w-40 flex justify-center items-center rounded-xl border shadow-md hover:scale-105 transition-all duration-300 hover:border-white"
+      class="z-50 bg-gradient-to-br  from-blue-900 via-fuchsia-800 to-pink-800 text-white teko cursor-pointer fixed bottom-2 right-2 p-2 w-40 flex justify-center items-center rounded-xl border shadow-md hover:scale-105 transition-all duration-300 hover:border-white"
     >
       Chat Me
     </div>

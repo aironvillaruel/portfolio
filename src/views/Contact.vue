@@ -45,8 +45,8 @@ const sendEmail = () => {
   console.log("Form Data:", form);
 
   const templateParams = {
-    user_name: form.name,
-    user_email: form.email,
+    name: form.name,
+    email: form.email,
     message: form.message,
   };
 
@@ -97,7 +97,7 @@ const sendEmail = () => {
       </div>
       <!-- mobile -->
       <div
-        class="md:hidden z-50 bg-gray-100 dark:bg-gradient-to-t from-slate-900 to-zinc-900 p-2 flex flex-col justify-between w-3/4 rounded-md shadow-md"
+        class="md:hidden z-30 bg-gray-100 dark:bg-gradient-to-t from-slate-900 to-zinc-900 p-2 flex flex-col justify-between w-3/4 rounded-md shadow-md"
       >
         <div class="w-full p-4 flex flex-col gap-4">
           <form @submit.prevent="sendEmail">

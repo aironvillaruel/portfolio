@@ -30,7 +30,7 @@ function successDownload(message) {
 const download = () => {
   console.log("download");
   const link = document.createElement("a");
-  link.href = "/public/Villaruel.pdf"; // Your PDF path
+  link.href = "/public/Resume(Villaruel).pdf"; // Your PDF path
   link.download = "CV-Villaruel.pdf"; // The file name for download
   link.click();
   successDownload("CV downloaded successfully");
@@ -39,7 +39,7 @@ const download = () => {
 // Hire function (example for demonstration)
 const hire = () => {
   console.log("test");
- window.location.href = "http://192.168.68.52:3000/contact";
+ window.location.href = "/contact";
 };
 
 const handleScroll = () => {

@@ -10,6 +10,8 @@ const image = ref(null);
 let project = ref("");
 let title = ref("");
 let description = ref("");
+let stack = ref("");
+
 // Function to open the modal
 const noctogramModal = () => {
   project = "noctogram";
@@ -19,16 +21,16 @@ const noctogramModal = () => {
 
 Through comprehensive resources, expert insights, and practical tips, we provide up-to-date information on the latest cyber threats, emerging trends, and how to safeguard your personal data. Whether you're a tech-savvy individual or someone new to the digital space, we aim to make cybersecurity accessible to all.`;
   modalRef.value.openModal(); // Calling openModal method through the reference
+  stack.value = "Vue JS, HTML5, Tailwind CSS";
 };
 
 const letupassModal = () => {
   project = "letupass";
   console.log(project);
   title.value = "I Let U Pass";
-  description.value = `Is an ultimate quiz-based game designed to help aspiring educators prepare for the Licensure Examination for Teachers (LET). This engaging and interactive app offers a fun and effective way to review essential topics, boost your knowledge, and test your readiness for the big day!
-
-With a variety of questions, from educational theory to classroom management, TeacherPrep allows you to challenge yourself through gamified quizzes, unlocking achievements as you progress. Whether you're studying on the go or need a break from traditional review methods, I Let U Pass turns studying into a fun, rewarding experience.`;
+  description.value = `Is an ultimate quiz-based game designed to help aspiring educators prepare for the Licensure Examination for Teachers (LET). This engaging and interactive app offers a fun and effective way to review essential topics, boost your knowledge, and test your readiness for the big day! With a variety of questions, from educational theory to classroom management.`;
   modalRef.value.openModal(); // Calling openModal method through the reference
+  stack.value = "Laravel PHP, Javascript, HTML5, Tailwind CSS, MYSQL, JQuery";
 };
 
 const ciebotModal = () => {
@@ -39,6 +41,8 @@ const ciebotModal = () => {
 
 With its seamless search functionality, powered by Algolia, students can quickly access information from a vast database of school-related content, while OpenAI ensures that the chatbot's responses are engaging, informative, and tailored to each individual’s needs.`;
   modalRef.value.openModal(); // Calling openModal method through the reference
+
+  stack.value = "Laravel PHP, Javascript, HTML5, Tailwind CSS, MYSQL, JQuery";
 };
 
 const crosModal = () => {
@@ -47,22 +51,25 @@ const crosModal = () => {
   title.value = "Community Relations and Outreach Services System";
   description.value = `Community Relations and Outreach Services System, streamlines the process of requesting and managing outreach activities within the university. Designed for faculty, and organizations, it offers a simple and efficient way to submit requests for hosting or participating in outreach events. Whether it's for community engagement, educational workshops, or volunteer opportunities, our platform ensures that all outreach activities are organized, tracked, and approved in one central place.`;
   modalRef.value.openModal(); // Calling openModal method through the reference
+  stack.value = "Laravel PHP, Javascript, HTML5, Tailwind CSS, MYSQL, JQuery";
 };
 
 const rgmModal = () => {
-  project = "rgm";
+  project = "necrodevs";
   console.log(project);
-  title.value = "RGM Manufacturing";
-  description.value = `Our website is powered by a user-friendly Content Management System (CMS), making it easy for you to explore our product catalog, request custom solutions, and access valuable resources. Whether you're looking for rubber-like materials for industrial, automotive, medical, or other applications, our team is committed to delivering innovative solutions with reliability and precision.`;
+  title.value = "Necrodevs";
+  description.value = `NecroDevs is a personal project, dynamic platform designed for web and system developers, offering a collection of innovative tools and resources aimed at streamlining development processes. Whether you're a beginner or an experienced professional, NecroDevs provides a variety of solutions to enhance productivity and simplify tasks in web and system development.`;
   modalRef.value.openModal(); // Calling openModal method through the reference
+  stack.value = "Vue JS, HTML5, Tailwind CSS";
 };
 
 const aklatanModal = () => {
   project = "aklatan";
   console.log(project);
-  title.value = "E - Aklatan";
-  description.value = `E - Aklatan is an online library management system which is a modern, efficient, and user-friendly platform designed to streamline the management of library resources. The system offers a seamless experience for both students and faculty, providing easy access to a wide range of digital and physical resources.`;
+  title.value = "Smile";
+  description.value = `Smile is a fun and interactive web application that brings the excitement of a photo booth directly to your screen. Whether you’re creating memories with friends or snapping a solo selfie, Smile offers an easy, engaging, and entertaining photo booth experience from the comfort of your own device.`;
   modalRef.value.openModal(); // Calling openModal method through the reference
+  stack.value = "Vue JS, HTML5, Tailwind CSS";
 };
 
 const graphicModal = () => {
@@ -82,6 +89,10 @@ const videoSrc = () => {
     return "https://www.youtube.com/embed/TrXs8A5QCmY?si=Tnwpe92YQQ9ZNBkA";
   } else if (project == "cros") {
     return "https://www.youtube.com/embed/qtdMaxoTKgA?si=GxcZWKDDZnf5xO_-";
+  } else if (project == "aklatan") {
+    return "https://www.youtube.com/embed/IM0TieGWVso?si=iP2NTyQj6ZcNmlLN";
+  } else if (project == "necrodevs") {
+    return "https://www.youtube.com/embed/n9f2hZaOi-o?si=JXmPaa0Df9U4PRC1";
   }
   return null;
 };
@@ -121,6 +132,10 @@ const videoSrc = () => {
       >
         {{ description }}
       </p>
+      <p class="w-full text-left text-zinc-900 dark:text-white outfit">
+        <span class="font-semibold outfit-bold">Technical Stack: </span>
+        {{ stack }}
+      </p>
     </Modal>
     <Modal ref="modalGraphic">
       <h3
@@ -142,7 +157,7 @@ const videoSrc = () => {
     <section
       class="bg-white dark:bg-zinc-900 p-4 flex justify-center flex-col items-center"
     >
-      <div class="flex justify-center w-full p-5 ">
+      <div class="flex justify-center w-full p-5">
         <h1
           class="text-3xl text-zinc-900 dark:text-white font-bold anton-regular"
         >
@@ -191,16 +206,18 @@ const videoSrc = () => {
 
         <div
           @click="rgmModal"
-          class="shadow-gradient-three rounded-3xl p-0.5 col-span-2 row-span-1 md:col-span-1 md:row-span-1 hover:scale-105 transition-all duration-300 cursor-pointer"
+          class="shadow-gradient rounded-3xl p-0.5 col-span-2 row-span-1 md:col-span-1 md:row-span-1 hover:scale-105 transition-all duration-300 cursor-pointer"
         >
           <div
-            id="rgm"
+            id="noctogram"
             class="col-span-1 row-span-1 p-4 bg-white dark:bg-zinc-950 rounded-3xl text-center flex flex-col justify-center items-center h-full"
           >
-            <h2 class="text-zinc-900 dark:text-white text-2xl teko">RGM CMS</h2>
+            <h2 class="text-zinc-900 dark:text-white text-2xl teko">
+              NECRODEVS
+            </h2>
             <img
-              src="/public/rgm.png"
-              class="w-1/3 md:w-40"
+              src="/public/necrodevs.png"
+              class="w-1/3 md:w-32"
               style="filter: drop-shadow(0 0 1px white)"
             />
           </div>
@@ -212,21 +229,19 @@ const videoSrc = () => {
         >
           <div
             id="aklatan"
-            class="col-span-2 row-span-1 md:col-span-1 md:row-span-1 bg-white dark:bg-zinc-950 rounded-3xl md:p-0 text-center flex flex-col justify-center items-center h-full"
+            class="col-span-2 row-span-1 md:col-span-1 md:row-span-1 bg-white dark:bg-zinc-950 rounded-3xl md:p-0 text-center flex flex-col items-center h-full"
           >
-            <h2 class="text-zinc-900 dark:text-white text-2xl teko">
-              E-AKLATAN
-            </h2>
-            <img src="/public/aklatan.png" class="w-1/3 md:w-40" />
+            <h2 class="text-zinc-900 dark:text-white text-2xl teko">SMILE</h2>
+            <img src="/public/smile.png" class="w-3/4 md:w-56 h-20 md:h-32" />
           </div>
         </div>
 
         <div
           @click="noctogramModal"
-          class="shadow-gradient rounded-3xl p-0.5 col-span-2 row-span-1 hover:scale-105 cursor-pointer transition-all duration-300 md:col-span-1 md:row-span-2"
+          class="shadow-gradient-three rounded-3xl p-0.5 col-span-2 row-span-1 hover:scale-105 cursor-pointer transition-all duration-300 md:col-span-1 md:row-span-2"
         >
           <div
-            id="noctogram"
+            id="rgm"
             class="col-span-2 row-span-1 md:col-span-1 md:row-span-2 bg-white dark:bg-zinc-950 rounded-3xl text-center flex flex-col justify-center items-center h-full"
           >
             <h2 class="text-zinc-900 dark:text-white text-2xl teko">
