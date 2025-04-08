@@ -179,20 +179,24 @@ const sendEmail = () => {
             >
             <div class="flex flex-row gap-5">
               <font-awesome-icon
+                @click="facebookIcon"
                 icon="fa-brands fa-square-facebook"
                 class="text-zinc-900 dark:text-white text-3xl hover:scale-125 transition-all duration-300 cursor-pointer hover:text-blue-600"
               />
 
               <font-awesome-icon
+                @click="instagramIcon"
                 icon="fa-brands fa-square-instagram"
                 class="text-zinc-900 dark:text-white text-3xl hover:scale-125 transition-all duration-300 cursor-pointer hover:text-orange-300"
               />
 
               <font-awesome-icon
+                @click="githubIcon"
                 icon="fa-brands fa-square-github"
                 class="text-zinc-900 dark:text-white text-3xl hover:scale-125 transition-all duration-300 cursor-pointer hover:text-gray-500"
               />
               <font-awesome-icon
+                @click="linkedIcon"
                 icon="fa-brands fa-linkedin"
                 class="text-zinc-900 dark:text-white text-3xl hover:scale-125 transition-all duration-300 cursor-pointer hover:text-cyan-500"
               />
